@@ -62,8 +62,8 @@ Para evitar sobrecarga e manter a performance, o sistema também inclui delays c
 Para rodar o projeto, você precisa seguir alguns passos simples. Primeiro, clone o repositório e instale as dependências. Em seguida, configure o arquivo .env com sua chave da API OpenAI e inicie o servidor. Veja como fazer:
 
 - Clone o repositório
-```git clone https://github.com/seu-usuario/choose-your-story.git
-cd choose-your-story```
+```git clone https://github.com/seu-usuario/choose-your-story.git```
+```cd choose-your-story```
 
 - Instale as dependências
 ```npm install```
