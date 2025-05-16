@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Story</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Choose Your Story</h1>
+    
+    <!-- 1. Seção de Briefing: Onde o usuário fornece o contexto inicial para a história -->
+    <div id="create-story-section">
+      <h2>Criar Nova História</h2>
+      <div class="form-group">
+        <label for="briefing">Briefing da História:</label>
+        <textarea id="briefing" rows="4" placeholder="Descreva o tema e contexto da sua história..."></textarea>
+      </div>
+      <button id="create-story-btn">Criar História</button>
+    </div>
+    
+    <!-- 2. Seção de Proposta de História: Exibe a sugestão da IA e permite edição -->
+    <div id="story-proposal-section" class="hidden">
+      <h2>Proposta de História</h2>
+      <div class="edit-section">
+        <p id="story-proposal"></p>
+        <button id="edit-story-btn" class="edit-button">Editar</button>
+      </div>
+      
+      <div class="form-group">
+        <label for="num-scenes">Número de Cenas:</label>
+        <!-- Limitado entre 3 e 15 cenas para balancear complexidade e desempenho -->
+        <input type="number" id="num-scenes" min="3" max="15" value="5">
+      </div>
+      
+      <button id="generate-scenes-btn">Gerar Cenas</button>
+    </div>
+    
+    <!-- 3. Seção de Estilo Visual: Permite escolher o estilo artístico das imagens -->
+    <div id="style-input-section" class="hidden">
+      <h2>Escolha o Estilo Visual</h2>
+      <div class="form-group">
+        <label for="style">Estilo Visual:</label>
+        <select id="style" class="style-select">
+          <option value="">Selecione um estilo...</option>
+          <option value="realista">Realista</option>
+          <option value="fotorrealista">Fotorrealista</option>
+          <option value="aquarela">Aquarela</option>
+          <option value="cartoon">Cartoon</option>
+          <option value="anime">Anime</option>
+          <option value="óleo">Pintura a Óleo</option>
+          <option value="pastel">Pastel</option>
+          <option value="pixelart">Pixel Art</option>
+          <option value="pintura">Pintura</option>
+        </select>
+        <button id="generate-style-btn">Gerar Amostras Visuais</button>
+      </div>
+    </div>
+    
+    <!-- 4. Seção de Visualização da História: Permite navegar e editar as cenas -->
+    <div id="story-viewer-section" class="hidden">
+      <h2>Sua História</h2>
+      <div id="scene-container">
+        <h3 id="scene-title" class="scene-title">Cena 1</h3>
+        
+        <!-- Conteúdo da imagem da cena com botão para regenerar -->
+        <div id="scene-image-container">
+          <div id="scene-image"></div>
+          <button id="regenerate-image-btn" class="edit-button">Regenerar Imagem</button>
+        </div>
+        
+        <!-- Detalhes textuais da cena (descrição, narração, diálogo) -->
+        <div id="scene-content">
+          <div class="scene-section">
+            <h4>Descrição</h4>
+            <div id="scene-description"></div>
+            <button id="edit-description-btn" class="edit-button">Editar</button>
+          </div>
+          
+          <div class="scene-section">
+            <h4>Narração</h4>
+            <div id="scene-narration"></div>
+            <button id="edit-narration-btn" class="edit-button">Editar</button>
+          </div>
+          
+          <div class="scene-section">
+            <h4>Diálogo</h4>
+            <div id="scene-dialogue"></div>
+            <button id="edit-dialogue-btn" class="edit-button">Editar</button>
+          </div>
+        </div>
+        
+        <!-- Navegação entre cenas -->
+        <div id="navigation">
+          <button id="prev-scene-btn" disabled>Anterior</button>
+          <span id="scene-counter">Cena 1 de 5</span>
+          <button id="next-scene-btn">Próxima</button>
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <button id="finish-story-btn" class="finish-button">Finalizar História</button>
+      </div>
+    </div>
+    
+    <!-- 5. Seção Final: Exibe a história completa e permite download -->
+    <div id="final-story-section" class="hidden">
+      <h2>História Finalizada</h2>
+      <div id="final-story-content">
+        <!-- Aqui serão exibidas todas as cenas finalizadas -->
+      </div>
+      <div class="button-container">
+        <button id="download-story-btn" class="download-button">Baixar História</button>
+        <button id="new-story-btn" class="new-story-button">Criar Nova História</button>
+      </div>
+    </div>
+    
+    <!-- Indicador de carregamento (spinner) para processos assíncronos -->
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Processando... Isso pode levar alguns instantes.</p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

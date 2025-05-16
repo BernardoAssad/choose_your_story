@@ -1,0 +1,624 @@
+/* 
+ * Estilos aprimorados para a aplicação "Choose Your Story"
+ * Tema profissional com elementos modernos e animações sutis
+ */
+
+/* Reset e configurações globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Container principal com sombra e animação de entrada */
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-out;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Classe hidden para controlar a visibilidade das seções */
+.hidden {
+  display: none !important;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* Estilo aprimorado para select */
+select.style-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%233498db%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 12px auto;
+  padding-right: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+select.style-select:hover {
+  border-color: #3498db;
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.15);
+}
+
+select.style-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+/* Estilo para opções dentro do select */
+select.style-select option {
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Estilos para formulários */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 16px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid rgba(44, 62, 80, 0.15);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+input:hover, textarea:hover {
+  border-color: rgba(52, 152, 219, 0.5);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Botões com efeitos de hover */
+button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #2574a9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:hover:before {
+  left: 100%;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+button:disabled {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  transform: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+}
+
+/* Container da cena com efeito de profundidade */
+#scene-container {
+  max-width: 850px;
+  margin: 0 auto 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#scene-container:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagem da cena */
+#scene-image {
+  width: 100%;
+  height: 500px;
+  background-color: #f7f9fc;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+#scene-image:hover {
+  filter: brightness(1.05);
+}
+
+/* Título da cena com estilo mais proeminente */
+.scene-title {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  padding: 20px 25px 15px;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+  font-weight: 600;
+}
+
+/* Conteúdo textual da cena */
+#scene-content {
+  padding: 25px;
+}
+
+.scene-section {
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.scene-section:hover {
+  background-color: rgba(247, 249, 252, 0.7);
+}
+
+.scene-section h4 {
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+/* Estilização dos diferentes elementos textuais da cena */
+#scene-description,
+#scene-narration,
+#scene-dialogue {
+  margin-bottom: 15px;
+  padding: 18px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  line-height: 1.7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+#scene-description:hover,
+#scene-narration:hover,
+#scene-dialogue:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Diferentes cores de borda para cada tipo de conteúdo */
+#scene-description {
+  border-left: 4px solid #3498db; /* Azul para descrição */
+}
+
+#scene-narration {
+  border-left: 4px solid #2ecc71; /* Verde para narração */
+}
+
+#scene-dialogue {
+  border-left: 4px solid #f39c12; /* Laranja para diálogo */
+  font-family: 'Courier New', monospace;
+}
+
+/* Botões de edição - CORRIGIDO para estar sempre visível */
+.edit-button {
+  background: rgba(243, 156, 18, 0.9);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 1; /* Agora sempre visível */
+}
+
+.edit-button:hover {
+  background: rgba(230, 126, 34, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo especial para o botão de regenerar imagem */
+#regenerate-image-btn {
+  top: 10px;
+  right: 10px;
+  background: rgba(41, 128, 185, 0.9);
+  padding: 8px 14px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+#regenerate-image-btn:hover {
+  background: rgba(41, 128, 185, 1);
+}
+
+/* Navegação entre cenas mais elegante */
+#navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background-color: #f7f9fc;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#scene-counter {
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+/* Modal de edição com animação */
+.edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.edit-modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  to { transform: scale(1); }
+}
+
+.edit-modal h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.edit-modal textarea {
+  width: 100%;
+  min-height: 220px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid rgba(44, 62, 80, 0.15);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.edit-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Efeito de destaque para botões principais */
+.finish-button,
+.download-button,
+.new-story-button {
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.finish-button {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.finish-button:hover {
+  background: linear-gradient(135deg, #219d54, #27ae60);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+}
+
+.download-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #2980b9, #2574a9);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.new-story-button {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.new-story-button:hover {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+}
+
+/* Spinner de carregamento aprimorado */
+.spinner {
+  border: 5px solid rgba(52, 152, 219, 0.1);
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  border-right: 5px solid transparent;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.1);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Overlay de carregamento mais elegante */
+#loading {
+  text-align: center;
+  padding: 35px 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#loading p {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 17px;
+}
+
+/* Elementos da visualização final da história */
+.final-scene {
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.final-scene:last-child {
+  border-bottom: none;
+}
+
+.final-scene:nth-child(1) { animation-delay: 0.1s; }
+.final-scene:nth-child(2) { animation-delay: 0.2s; }
+.final-scene:nth-child(3) { animation-delay: 0.3s; }
+.final-scene:nth-child(4) { animation-delay: 0.4s; }
+.final-scene:nth-child(5) { animation-delay: 0.5s; }
+
+.final-scene-image {
+  width: 100%;
+  height: 450px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 25px 0;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.final-scene-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Seções com estilo e animação quando visíveis */
+#create-story-section,
+#story-proposal-section,
+#style-input-section,
+#story-viewer-section,
+#final-story-section {
+  opacity: 0;
+  animation: fadeInSection 0.5s ease-out forwards;
+}
+
+@keyframes fadeInSection {
+  to { opacity: 1; }
+}
+
+#create-story-section:not(.hidden),
+#story-proposal-section:not(.hidden),
+#style-input-section:not(.hidden),
+#story-viewer-section:not(.hidden),
+#final-story-section:not(.hidden) {
+  display: block;
+  animation: fadeInSection 0.5s ease-out forwards;
+}
+
+/* Estilo para as seções de proposta e estilo */
+#story-proposal-section,
+#style-input-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+}
+
+/* Container da imagem com posicionamento relativo para o botão de regenerar */
+#scene-image-container {
+  position: relative;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 15px;
+    width: calc(100% - 30px);
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .edit-modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  #scene-image {
+    height: 320px;
+  }
+  
+  .final-scene-image {
+    height: 320px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #style-input-section .form-group {
+    flex-direction: column;
+  }
+  
+  #style-input-section button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .finish-button, 
+  .download-button, 
+  .new-story-button {
+    width: 100%;
+  }
+}
+
+/* Adicionando a fonte via @import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
